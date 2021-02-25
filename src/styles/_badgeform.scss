@@ -25,7 +25,7 @@
             font-family: $mainFontFamily;
             background-color: $lightColor;
             border-radius: 0.3rem;
-            border: 1px solid #bbbbbb;
+            border: 1px solid $altLightColor;
             &#ppicture {
                 display: none;
             }
@@ -33,7 +33,7 @@
         hr {
             margin: 1.5rem 0 0;
             border: 0px;
-            border-top: 1px solid #bbbbbb;
+            border-top: 1px solid $altLightColor;
         }
     }
     &__file {

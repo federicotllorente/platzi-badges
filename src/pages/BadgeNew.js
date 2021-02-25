@@ -6,6 +6,23 @@ import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 
 class BadgeNew extends Component {
+    state = {
+        form: {
+            fname: '',
+            lname: '',
+            email: '',
+            jtitle: '',
+            twitter: ''
+        }
+    }
+    handleChange = e => {
+        this.setState({
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value
+            }
+        });
+    }
     render() {
         return (
             <div className="BadgeNew">
@@ -15,14 +32,15 @@ class BadgeNew extends Component {
                 </div>
                 <div className="BadgeNew__container">
                     <Badge
-                        firstName="Federico"
-                        lastName="Tejedor"
-                        avatarUrl="https://mir-s3-cdn-cf.behance.net/user/276/2aa2be101429359.5fe347ac143e2.png"
-                        jobTitle="Front-end Developer"
-                        twitter="federicotllorente"
-                        twitterUrl="https://www.twitter.com/federicotllorente/"
+                        firstName={this.state.form.fname}
+                        lastName={this.state.form.lname}
+                        email={this.state.form.email}
+                        jobTitle={this.state.form.jtitle}
+                        twitter={this.state.form.twitter}
+                        avatarUrl='https://mir-s3-cdn-cf.behance.net/user/276/2aa2be101429359.5fe347ac143e2.png'
+                        twitterUrl='https://www.twitter.com/federicotllorente/'
                     />
-                    <BadgeForm />
+                    <BadgeForm onChange={this.handleChange} formValues={this.state.form} />
                 </div>
             </div>
         );
