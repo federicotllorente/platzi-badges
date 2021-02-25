@@ -1,0 +1,99 @@
+.BadgeForm {
+    width: 45vw;
+    max-width: 600px;
+    margin-top: -150px;
+    h1 {
+        padding: 0 0 0.5rem;
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: $lightColor;
+        text-align: center;
+    }
+    form {
+        padding: 0 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+        label:not(.BadgeForm__file) {
+            margin: 1.5rem 0 0.2rem;
+            font-weight: 700;
+        }
+        input {
+            padding: 0.5rem;
+            font-family: $mainFontFamily;
+            background-color: $lightColor;
+            border-radius: 0.3rem;
+            border: 1px solid #bbbbbb;
+            &#ppicture {
+                display: none;
+            }
+        }
+        hr {
+            margin: 1.5rem 0 0;
+            border: 0px;
+            border-top: 1px solid #bbbbbb;
+        }
+    }
+    &__file {
+        margin: 1.5rem 0;
+        padding: 0.5rem;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        color: $linksColor;
+        font-weight: 700;
+        border-radius: 0.3rem;
+        border: 1px solid $linksColor;
+        transition: 0.3s;
+        p {
+            margin-left: 0.5rem;
+        }
+        &:hover {
+            background-color: $linksColorWOpacity;
+            cursor: pointer;
+        }
+    }
+    &__checkbox {
+        margin: 0 0 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            margin-left: 0.5rem;
+        }
+    }
+    &__button {
+        padding: 1rem 0;
+        color: $lightColor;
+        background-color: $primaryColor;
+        font-family: $mainFontFamily;
+        font-size: $mainFontSize;
+        font-weight: 700;
+        border-radius: 0.3rem;
+        border: none;
+        transition: 0.3s;
+        &:not(:disabled):not(.disabled) {
+            &:hover, &:active {
+                background-color: $altPrimaryColor;
+                cursor: pointer;
+            }
+            &:focus {
+                box-shadow: 0 0 0 0.2rem $primaryColorWOpacity;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpointTablet) {
+    .BadgeForm {
+        width: 90vw;
+        margin-top: 50px;
+        h1 {
+            color: initial;
+        }
+    }
+}

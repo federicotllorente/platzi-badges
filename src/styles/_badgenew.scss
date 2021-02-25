@@ -1,0 +1,27 @@
+.BadgeNew {
+    &__hero {
+        width: 100%;
+        padding: 2rem 0;
+        background: url('../img/stars.svg'), $darkColor;
+        background-repeat: repeat;
+        margin-bottom: 1rem;
+        color: $lightColor;
+        img {
+            width: 300px;
+            padding-left: 5vw;
+        }
+    }
+    &__container {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0 0 50px;
+    }
+}
+
+@media (max-width: $breakpointTablet) {
+    .BadgeNew__container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

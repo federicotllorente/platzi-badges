@@ -1,0 +1,53 @@
+.Navbar {
+    background-color: $darkColor;
+    a {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        img {
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+        }
+        p {
+            color: $lightColor;
+            position: relative;
+            span {
+                font-weight: 600;
+                &.mask {
+                    width: 4.3rem;
+                    height: 1.3rem;
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: 2;
+                    border-bottom: solid 1px transparent;
+                }
+            }
+        }
+        &:hover {
+            .mask {
+                display: initial;
+                animation-name: borderOnHover;
+                animation-duration: 1s;
+            }
+        }
+    }
+}
+
+@keyframes borderOnHover {
+    0% {
+        width: 0;
+        left: 0;
+        border-bottom: solid 1px white;
+    }
+    50% {
+        width: 4.3rem;
+        left: 0;
+        border-bottom: solid 1px white;
+    }
+    100% {
+        width: 0;
+        left: 4.3rem;
+        border-bottom: solid 1px white;
+    }
+}

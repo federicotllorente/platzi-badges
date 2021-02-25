@@ -1,0 +1,59 @@
+// Google Fonts imports
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+// Variables
+$primaryColor: #7DCD40;
+$primaryColorWOpacity: rgba(125, 205, 64, 0.5);
+$altPrimaryColor: #70af40;
+$secondaryColor: #CD4040;
+$secondaryColorWOpacity: rgba(255, 64, 64, 0.5);
+$linksColor: #228BCC;
+$linksColorWOpacity: #228bcc23;
+$lightColor: #f4f4f7;
+$altLightColor: #dbdbdb;
+$darkColor: #1b1b25;
+$mainFontSize: 15px;
+$mainFontFamily: 'Lato', 'Helvetica Neue', sans-serif;
+$altFontFamily: 'Bebas Neue', sans-serif;
+
+// Breakpoints
+// $breakpointMobile: 424px;
+$breakpointTablet: 767px;
+
+// Reseting the default styles
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $mainFontFamily;
+    font-size: $mainFontSize;
+    background-color: $lightColor;
+    h1, h2 {
+        font-family: $altFontFamily;
+        text-transform: uppercase;
+    }
+    h3, h4, h5 {
+        font-family: $altFontFamily;
+    }
+    a {
+        color: $linksColor;
+        text-decoration: none;
+        &.link-unstyled {
+            color: inherit;
+            &:hover {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// Importing all the components
+@import '_navbar.scss';
+@import '_badge.scss';
+@import '_badgeform.scss';
+@import '_badgenew.scss';

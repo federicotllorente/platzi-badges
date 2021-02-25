@@ -1,0 +1,79 @@
+.Badge {
+    width: 45vw;
+    max-width: 450px;
+    max-height: 430px;
+    margin-top: 50px;
+    background: $lightColor;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden;
+    h1, h2, h3, h4, h5 {
+        font-family: $mainFontFamily;
+        font-weight: 700;
+    }
+    &__header {
+        padding: 0.5rem 0;
+        height: 80px;
+        background: $darkColor;
+        display: flex;
+        justify-content: center;
+    }
+    &__section-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+    &__section-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        background: $altLightColor;
+        h3 {
+            padding-bottom: 0.5rem;
+        }
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                &:first-of-type {
+                    padding: 0.2rem;
+                    width: 1.5rem;
+                    height: auto;
+                }
+                &:last-of-type {
+                    padding: 0.5rem;
+                    width: 1.2rem;
+                    height: auto;
+                }
+            }
+        }
+    }
+    &__avatar {
+        border-radius: 50%;
+        margin-right: 1rem;
+        width: 120px;
+        height: 120px;
+    }
+    &__footer {
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $primaryColor;
+        font-weight: bold;
+        font-style: italic;
+    }
+}
+
+@media (max-width: $breakpointTablet) {
+    .Badge {
+        width: 90vw;
+    }
+}
