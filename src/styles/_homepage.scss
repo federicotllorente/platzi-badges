@@ -1,0 +1,46 @@
+.Homepage {
+    width: 100%;
+    min-height: 100vh;
+    margin: -60px 0 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: $lightColor;
+    background-image: url(../img/stars.svg);
+    background-color: $darkColor;
+    & > img {
+        width: 50vw;
+        max-width: 600px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        img {
+            width: 200px;
+            padding-bottom: 1rem;
+        }
+        p {
+            padding-bottom: 1rem;
+        }
+        a {
+            @include button-link();
+        }
+    }
+}
+
+@media (max-width: $breakpointTablet) {
+    .Homepage {
+        flex-direction: column-reverse;
+        & > img {
+            width: 250px;
+        }
+        &__content {
+            padding: 0 2rem;
+            img {
+                width: 150px;
+            }
+        }
+    }
+}

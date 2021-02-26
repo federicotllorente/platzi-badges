@@ -16,8 +16,30 @@ $mainFontSize: 15px;
 $mainFontFamily: 'Lato', 'Helvetica Neue', sans-serif;
 $altFontFamily: 'Bebas Neue', sans-serif;
 
+// Mixins
+@mixin button-link {
+    padding: 1rem 1.5rem;
+    color: $lightColor;
+    background-color: $primaryColor;
+    font-family: $mainFontFamily;
+    font-size: $mainFontSize;
+    font-weight: 700;
+    border-radius: 0.3rem;
+    border: none;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+    &:not(:disabled):not(.disabled) {
+        &:hover, &:active {
+            background-color: $altPrimaryColor;
+            cursor: pointer;
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem $primaryColorWOpacity;
+        }
+    }
+}
+
 // Breakpoints
-// $breakpointMobile: 424px;
 $breakpointTablet: 767px;
 
 // Reseting the default styles
@@ -28,6 +50,7 @@ $breakpointTablet: 767px;
     -moz-osx-font-smoothing: grayscale;
 }
 
+// Main styles
 body {
     font-family: $mainFontFamily;
     font-size: $mainFontSize;
@@ -52,10 +75,43 @@ body {
     }
 }
 
+// Error 404 page styles
+.NotFound {
+    width: 100%;
+    min-height: 100vh;
+    margin: -60px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    color: $lightColor;
+    background-image: url(../img/stars.svg);
+    background-color: $darkColor;
+    img {
+        padding-top: 100px;
+        width: 300px;
+        margin: 0 0 1rem;
+    }
+    a {
+        @include button-link();
+        margin: 1rem 0 0;
+    }
+}
+
 // Importing all the components
 @import '_navbar.scss';
 @import '_badge.scss';
 @import '_badgeform.scss';
 @import '_badgeslist.scss';
+@import '_homepage.scss';
 @import '_badgenew.scss';
 @import '_badges.scss';
+
+// Responsive design (media queries)
+@media (max-width: $breakpointTablet) {
+    .NotFound {
+        img {
+            width: 250px;
+        }
+    }
+}

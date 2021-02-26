@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import inputFile from '../img/input_file.svg';
 
@@ -43,7 +44,7 @@ class BadgeForm extends Component {
                     <input type="file" name="ppicture" id="ppicture" />
                     <div className="BadgeForm__checkbox">
                         <input type="checkbox" name="terms" id="terms" />
-                        <p>I accept the <a href="/">terms of service</a> and the <a href="/">privacy policy</a></p>
+                        <p>I accept the <Link to="/terms-of-service">terms of service</Link> and the <Link to="/privacy-policy">privacy policy</Link></p>
                     </div>
                     <button onClick={this.handleClick} className="BadgeForm__button">Save</button>
                 </form>

@@ -25,9 +25,7 @@
         justify-content: flex-end;
         margin-bottom: 1rem;
         a {
-            @extend .BadgeForm__button;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+            @include button-link();
         }
     }
 }

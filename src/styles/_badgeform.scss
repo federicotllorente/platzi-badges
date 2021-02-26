@@ -67,24 +67,8 @@
         }
     }
     &__button {
+        @include button-link();
         padding: 1rem 0;
-        color: $lightColor;
-        background-color: $primaryColor;
-        font-family: $mainFontFamily;
-        font-size: $mainFontSize;
-        font-weight: 700;
-        border-radius: 0.3rem;
-        border: none;
-        transition: 0.3s;
-        &:not(:disabled):not(.disabled) {
-            &:hover, &:active {
-                background-color: $altPrimaryColor;
-                cursor: pointer;
-            }
-            &:focus {
-                box-shadow: 0 0 0 0.2rem $primaryColorWOpacity;
-            }
-        }
     }
 }
 

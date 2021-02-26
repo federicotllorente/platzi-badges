@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import confLogo from '../img/badge-header.svg';
-import Navbar from '../components/Navbar';
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 
@@ -26,7 +25,6 @@ class BadgeNew extends Component {
     render() {
         return (
             <div className="BadgeNew">
-                <Navbar />
                 <div className="BadgeNew__hero">
                     <img src={confLogo} alt="Logo Platzi Conf" />
                 </div>

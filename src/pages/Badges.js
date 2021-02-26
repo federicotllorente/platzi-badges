@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import confLogo from '../img/badge-header.svg';
-import Navbar from '../components/Navbar';
 import BadgesList from '../components/BadgesList';
 
 class Badges extends Component {
@@ -39,7 +39,6 @@ class Badges extends Component {
     render() {
         return (
             <div className="Badges">
-                <Navbar />
                 <div className="Badges__hero">
                     <div className="Badges__container">
                         <img className="Badges_conf-logo" src={confLogo} alt="Logo PlatziConf" />
@@ -47,7 +46,7 @@ class Badges extends Component {
                 </div>
                 <div className="Badges__container">
                     <div className="Badges__buttons">
-                        <a href="/badges/new">Add</a>
+                        <Link to="/badges/new">Add</Link>
                     </div>
                     <BadgesList listData={this.state.data} />
                 </div>
