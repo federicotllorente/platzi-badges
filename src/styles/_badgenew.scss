@@ -19,9 +19,18 @@
 }
 
 @media (max-width: $breakpointTablet) {
-    .BadgeNew__container {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .BadgeNew {
+        text-align: center;
+        &__hero {
+            img {
+                width: 250px;
+                padding-left: 0;
+            }
+        }
+        &__container {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }

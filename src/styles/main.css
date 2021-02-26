@@ -239,6 +239,7 @@ body a.link-unstyled:hover {
 @media (max-width: 767px) {
   .Badge {
     width: 90vw;
+    margin-top: 1rem;
   }
 }
 
@@ -345,7 +346,7 @@ body a.link-unstyled:hover {
   margin-left: 0.5rem;
 }
 
-.BadgeForm__button {
+.BadgeForm__button, .Badges__buttons a {
   padding: 1rem 0;
   color: #f4f4f7;
   background-color: #7DCD40;
@@ -358,12 +359,12 @@ body a.link-unstyled:hover {
   transition: 0.3s;
 }
 
-.BadgeForm__button:not(:disabled):not(.disabled):hover, .BadgeForm__button:not(:disabled):not(.disabled):active {
+.BadgeForm__button:not(:disabled):not(.disabled):hover, .Badges__buttons a:not(:disabled):not(.disabled):hover, .BadgeForm__button:not(:disabled):not(.disabled):active, .Badges__buttons a:not(:disabled):not(.disabled):active {
   background-color: #70af40;
   cursor: pointer;
 }
 
-.BadgeForm__button:not(:disabled):not(.disabled):focus {
+.BadgeForm__button:not(:disabled):not(.disabled):focus, .Badges__buttons a:not(:disabled):not(.disabled):focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
 }
@@ -376,6 +377,54 @@ body a.link-unstyled:hover {
   .BadgeForm h1 {
     color: initial;
   }
+}
+
+.BadgesList {
+  margin-bottom: 50px;
+}
+
+.BadgesList ul > li {
+  margin-bottom: 1rem;
+}
+
+.BadgesList__item {
+  background: #fff;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+}
+
+.BadgesList__item__avatar {
+  border-radius: 50%;
+  background: #a3a3a3;
+  margin-right: 1rem;
+  width: 80px;
+  height: 80px;
+}
+
+.BadgesList__item__content h1, .BadgesList__item__content h2, .BadgesList__item__content h3, .BadgesList__item__content h4, .BadgesList__item__content h5 {
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  text-transform: initial;
+}
+
+.BadgesList__item__content p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.BadgesList__item__content p img {
+  padding: 0.2rem;
+  width: 1.5rem;
+  height: auto;
 }
 
 .BadgeNew__hero {
@@ -403,6 +452,13 @@ body a.link-unstyled:hover {
 }
 
 @media (max-width: 767px) {
+  .BadgeNew {
+    text-align: center;
+  }
+  .BadgeNew__hero img {
+    width: 250px;
+    padding-left: 0;
+  }
   .BadgeNew__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -414,6 +470,60 @@ body a.link-unstyled:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+.Badges__hero {
+  width: 100%;
+  padding: 2rem 0;
+  background: url("../img/stars.svg"), #1b1b25;
+  background-repeat: repeat;
+  margin-bottom: 1rem;
+}
+
+.Badges__hero > .Badges__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Badges__container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.Badges_conf-logo {
+  margin-bottom: 2rem;
+  width: 300px;
+}
+
+.Badges__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.Badges__buttons a {
+  padding: 1rem 1.5rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+}
+
+@media (max-width: 767px) {
+  .Badges_conf-logo {
+    width: 250px;
   }
 }
 /*# sourceMappingURL=main.css.map */

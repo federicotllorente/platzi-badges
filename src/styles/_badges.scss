@@ -1,0 +1,41 @@
+.Badges {
+    &__hero {
+        width: 100%;
+        padding: 2rem 0;
+        background: url('../img/stars.svg'), $darkColor;
+        background-repeat: repeat;
+        margin-bottom: 1rem;
+        & > .Badges__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    &_conf-logo {
+        margin-bottom: 2rem;
+        width: 300px;
+    }
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+        a {
+            @extend .BadgeForm__button;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+        }
+    }
+}
+
+@media (max-width: $breakpointTablet) {
+    .Badges {
+        &_conf-logo {
+            width: 250px;
+        }
+    }
+}

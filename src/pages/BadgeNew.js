@@ -38,7 +38,7 @@ class BadgeNew extends Component {
                         jobTitle={this.state.form.jtitle}
                         twitter={this.state.form.twitter}
                         avatarUrl='https://mir-s3-cdn-cf.behance.net/user/276/2aa2be101429359.5fe347ac143e2.png'
-                        twitterUrl='https://www.twitter.com/federicotllorente/'
+                        twitterUrl={'https://www.twitter.com/' + this.state.form.twitter + '/'}
                     />
                     <BadgeForm onChange={this.handleChange} formValues={this.state.form} />
                 </div>
