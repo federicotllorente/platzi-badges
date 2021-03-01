@@ -26,6 +26,7 @@
             background-color: $lightColor;
             border-radius: 0.3rem;
             border: 1px solid $altLightColor;
+            -webkit-appearance: none;
             &#ppicture {
                 display: none;
             }
@@ -75,9 +76,9 @@
 @media (max-width: $breakpointTablet) {
     .BadgeForm {
         width: 90vw;
-        margin-top: 50px;
+        margin-top: -8rem;
         h1 {
-            color: initial;
+            // color: initial;
         }
     }
 }

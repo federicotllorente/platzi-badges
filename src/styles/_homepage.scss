@@ -33,8 +33,10 @@
 @media (max-width: $breakpointTablet) {
     .Homepage {
         flex-direction: column-reverse;
+        justify-content: flex-end;
         & > img {
             width: 250px;
+            padding: 100px 0 2rem;
         }
         &__content {
             padding: 0 2rem;

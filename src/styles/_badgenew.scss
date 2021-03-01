@@ -22,13 +22,14 @@
     .BadgeNew {
         text-align: center;
         &__hero {
+            padding: 2rem 0 9rem;
             img {
                 width: 250px;
                 padding-left: 0;
             }
         }
         &__container {
-            flex-direction: column;
+            flex-direction: column-reverse;
             justify-content: center;
             align-items: center;
         }

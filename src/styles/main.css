@@ -291,7 +291,7 @@ body a.link-unstyled:hover {
 @media (max-width: 767px) {
   .Badge {
     width: 90vw;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -335,6 +335,7 @@ body a.link-unstyled:hover {
   background-color: #f4f4f7;
   border-radius: 0.3rem;
   border: 1px solid #dbdbdb;
+  -webkit-appearance: none;
 }
 
 .BadgeForm form input#ppicture {
@@ -427,10 +428,7 @@ body a.link-unstyled:hover {
 @media (max-width: 767px) {
   .BadgeForm {
     width: 90vw;
-    margin-top: 50px;
-  }
-  .BadgeForm h1 {
-    color: initial;
+    margin-top: -8rem;
   }
 }
 
@@ -561,9 +559,13 @@ body a.link-unstyled:hover {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .Homepage > img {
     width: 250px;
+    padding: 100px 0 2rem;
   }
   .Homepage__content {
     padding: 0 2rem;
@@ -601,15 +603,18 @@ body a.link-unstyled:hover {
   .BadgeNew {
     text-align: center;
   }
+  .BadgeNew__hero {
+    padding: 2rem 0 9rem;
+  }
   .BadgeNew__hero img {
     width: 250px;
     padding-left: 0;
   }
   .BadgeNew__container {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
