@@ -99,6 +99,8 @@ body {
 }
 
 // Importing all the components
+@import '_loader.scss';
+@import '_errormodal.scss';
 @import '_navbar.scss';
 @import '_badge.scss';
 @import '_badgeform.scss';

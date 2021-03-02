@@ -26,9 +26,6 @@ class Badges extends Component {
         }
     }
     render() {
-        // if (this.state.loading) {
-        //     return "Loading...";
-        // }
         if (this.state.error) {
             return (
                 <div className="NotFound">

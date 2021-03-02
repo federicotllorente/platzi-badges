@@ -87,6 +87,77 @@ body a.link-unstyled:hover {
           box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
 }
 
+.loader {
+  width: 2rem;
+  height: 2rem;
+  border: 0.3rem solid #cfcfcf;
+  border-radius: 50%;
+  border-left-color: #1b1b25;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 100px auto 0;
+  -webkit-animation: loader-animation 1s ease infinite;
+          animation: loader-animation 1s ease infinite;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@-webkit-keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.error_modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 2;
+  background-color: #CD4040;
+  right: 2rem;
+  top: 2rem;
+  padding: 2rem;
+  color: #f1f1f1;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+  .error_modal {
+    right: 0;
+    left: 0;
+    margin: 60px 2rem 0;
+  }
+}
+
 .Navbar {
   background-color: #1b1b25;
 }
@@ -327,6 +398,7 @@ body a.link-unstyled:hover {
 .BadgeForm form label:not(.BadgeForm__file) {
   margin: 1.5rem 0 0.2rem;
   font-weight: 700;
+  text-align: left;
 }
 
 .BadgeForm form input {
@@ -335,6 +407,9 @@ body a.link-unstyled:hover {
   background-color: #f4f4f7;
   border-radius: 0.3rem;
   border: 1px solid #dbdbdb;
+}
+
+.BadgeForm form input:not(#terms) {
   -webkit-appearance: none;
 }
 
@@ -397,6 +472,7 @@ body a.link-unstyled:hover {
 
 .BadgeForm__checkbox p {
   margin-left: 0.5rem;
+  text-align: left;
 }
 
 .BadgeForm__button {
@@ -423,6 +499,13 @@ body a.link-unstyled:hover {
 .BadgeForm__button:not(:disabled):not(.disabled):focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+}
+
+.BadgeForm .required_input {
+  font-size: 0.8rem;
+  font-weight: initial;
+  color: #CD4040;
+  font-style: italic;
 }
 
 @media (max-width: 767px) {
@@ -459,6 +542,20 @@ body a.link-unstyled:hover {
   height: 80px;
 }
 
+.BadgesList__item__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-wrap: anywhere;
+}
+
 .BadgesList__item__content h1, .BadgesList__item__content h2, .BadgesList__item__content h3, .BadgesList__item__content h4, .BadgesList__item__content h5 {
   font-family: "Lato", "Helvetica Neue", sans-serif;
   font-weight: 700;
@@ -478,6 +575,13 @@ body a.link-unstyled:hover {
   padding: 0.2rem;
   width: 1.5rem;
   height: auto;
+}
+
+@media (max-width: 767px) {
+  .BadgesList__item__avatar {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .Homepage {

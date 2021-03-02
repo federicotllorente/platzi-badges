@@ -19,6 +19,7 @@
         label:not(.BadgeForm__file) {
             margin: 1.5rem 0 0.2rem;
             font-weight: 700;
+            text-align: left;
         }
         input {
             padding: 0.5rem;
@@ -26,7 +27,9 @@
             background-color: $lightColor;
             border-radius: 0.3rem;
             border: 1px solid $altLightColor;
-            -webkit-appearance: none;
+            &:not(#terms) {
+                -webkit-appearance: none;
+            }
             &#ppicture {
                 display: none;
             }
@@ -65,11 +68,18 @@
         align-items: center;
         p {
             margin-left: 0.5rem;
+            text-align: left;
         }
     }
     &__button {
         @include button-link();
         padding: 1rem 0;
+    }
+    .required_input {
+        font-size: 0.8rem;
+        font-weight: initial;
+        color: $secondaryColor;
+        font-style: italic;
     }
 }
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import twitterLogo from '../img/twitter.svg';
 import BadgesListSkeleton from './BadgesListSkeleton';
+import Gravatar from './Gravatar';
 
 class BadgesList extends Component {
     render() {
@@ -21,19 +22,22 @@ class BadgesList extends Component {
                 </div>
             );
         }
+        const reverseListData = [...this.props.listData].reverse();
         return (
             <div className="BadgesList">
                 <ul>
-                    {this.props.listData.map(el => {
+                    {reverseListData.map(el => {
                         return (
                             <li className="BadgesList__item" key={el.id}>
-                                <img className="BadgesList__item__avatar" src={el.avatarUrl} alt="Avatar" />
+                                <Gravatar className="BadgesList__item__avatar" email={el.email} alt={`${el.fname} ${el.lname}`} />
                                 <div className="BadgesList__item__content">
                                     <h2>{el.fname} {el.lname}</h2>
-                                    <p>
-                                        <img src={twitterLogo} alt="Twitter Logo" />
-                                        <a href={"https://www.twitter.com/" + el.twitter + "/"}>@{el.twitter}</a>
-                                    </p>
+                                    {el.twitter && (
+                                        <p>
+                                            <img src={twitterLogo} alt="Twitter Logo" />
+                                            <a href={`https://www.twitter.com/${el.twitter}/`}>@{el.twitter}</a>
+                                        </p>
+                                    )}
                                     <h3>{el.jtitle}</h3>
                                 </div>
                             </li>

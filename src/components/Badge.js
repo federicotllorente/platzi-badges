@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 import confLogo from '../img/badge-header.svg';
 import twitterLogo from '../img/twitter.svg';
-import uruguayFlag from '../img/uruguay.svg';
+// import uruguayFlag from '../img/uruguay.svg';
+import Gravatar from './Gravatar';
 
 class Badge extends Component {
     render() {
         const {
-            firstName,
-            lastName,
-            avatarUrl,
-            jobTitle,
-            twitter,
-            twitterUrl
+            fname,
+            lname,
+            email,
+            jtitle,
+            twitter
         } = this.props;
         return (
             <div className="Badge">
@@ -20,15 +20,17 @@ class Badge extends Component {
                     <img src={confLogo} alt="Header Platzi Conf" />
                 </div>
                 <div className="Badge__section-name">
-                    <img className="Badge__avatar" src={avatarUrl} alt="Avatar perfil" />
-                    <h2>{firstName}<br />{lastName}</h2>
+                    <Gravatar className="Badge__avatar" email={email} fname={fname} lname={lname} />
+                    <h2>{fname || 'First name'}<br />{lname || 'Last name'}</h2>
                 </div>
                 <div className="Badge__section-info">
-                    <h3>{jobTitle}</h3>
+                    <h3>{jtitle || 'Your job title'}</h3>
                     <p>
                         <img src={twitterLogo} alt="Twitter Logo" />
-                        <a href={twitterUrl}>@{twitter}</a>
-                        <img src={uruguayFlag} alt="Uruguay Flag" />
+                        <a href={twitter ? `https://www.twitter.com/${twitter}/` : '#'}>
+                            @{twitter || 'twitter_username'}
+                        </a>
+                        {/* <img src={uruguayFlag} alt="Uruguay Flag" /> */}
                     </p>
                 </div>
                 <div className="Badge__footer">

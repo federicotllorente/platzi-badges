@@ -1,0 +1,23 @@
+.error_modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    background-color: $secondaryColor;
+    right: 2rem;
+    top: 2rem;
+    padding: 2rem;
+    color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+}
+
+@media (max-width: $breakpointTablet) {
+    .error_modal {
+        right: 0;
+        left: 0;
+        margin: 60px 2rem 0;
+    }
+}
