@@ -2,26 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import twitterLogo from '../img/twitter.svg';
+import BadgesListSkeleton from './BadgesListSkeleton';
 
 class BadgesList extends Component {
     render() {
         if (this.props.isLoading) {
+            // The 'quantity' prop is how many skeleton items are shown when the app is fetching the data
             return (
-                <div className="BadgesList">
-                    <ul>
-                        <li className="BadgesList__item">
-                            <img className="BadgesList__item__avatar" src="https://mir-s3-cdn-cf.behance.net/user/276/2aa2be101429359.5fe347ac143e2.png" alt="Avatar" />
-                            <div className="BadgesList__item__content">
-                                <h2>Nombre Apellido</h2>
-                                <p>
-                                    <img src={twitterLogo} alt="Twitter Logo" />
-                                    <a href={"https://www.twitter.com/federicotllorente/"}>@federicotllorente</a>
-                                </p>
-                                <h3>Job title</h3>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <BadgesListSkeleton quantity="3" />
             );
         }
         if (this.props.listData.length === 0) {
