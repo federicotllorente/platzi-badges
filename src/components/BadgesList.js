@@ -40,6 +40,10 @@ class BadgesList extends Component {
                                     )}
                                     <h3>{el.jtitle}</h3>
                                 </div>
+                                <div className="BadgesList__item__buttons">
+                                    <Link to={`badges/${el.id}/edit`}>Edit</Link>
+                                    <Link to={`badges/${el.id}/delete`}>Delete</Link>
+                                </div>
                             </li>
                         );
                     })}

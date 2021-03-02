@@ -5,9 +5,9 @@ import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 import api from '../api';
 
-class BadgeNew extends Component {
+class BadgeEdit extends Component {
     state = {
-        loading: false,
+        loading: true,
         error: null,
         form: {
             fname: '',
@@ -29,9 +29,21 @@ class BadgeNew extends Component {
         e.preventDefault();
         this.setState({ loading: true, error: null });
         try {
-            await api.badges.create(this.state.form);
+            await api.badges.update(this.props.match.params.badgeId, this.state.form);
             this.setState({ loading: false });
             this.props.history.push('/badges');
+        } catch (error) {
+            this.setState({ loading: false, error: error });
+        }
+    };
+    componentDidMount() {
+        this.fetchData();
+    }
+    fetchData = async () => {
+        this.setState({ loading: true, error: null });
+        try {
+            const data = await api.badges.read(this.props.match.params.badgeId);
+            this.setState({ loading: false, form: data });
         } catch (error) {
             this.setState({ loading: false, error: error });
         }
@@ -55,7 +67,7 @@ class BadgeNew extends Component {
                         jtitle={this.state.form.jtitle}
                         twitter={this.state.form.twitter}
                     />
-                    <BadgeForm onSubmit={this.handleSubmit} onChange={this.handleChange} formValues={this.state.form} action="create" />
+                    <BadgeForm onSubmit={this.handleSubmit} onChange={this.handleChange} formValues={this.state.form} action="edit" />
                 </div>
                 {this.state.error && (
                     <div className="error_modal">
@@ -69,4 +81,4 @@ class BadgeNew extends Component {
     }
 }
 
-export default BadgeNew;
+export default BadgeEdit;

@@ -7,7 +7,12 @@ class BadgeForm extends Component {
     render() {
         return (
             <div className="BadgeForm">
-                <h1>New attendant</h1>
+                {this.props.action === 'create' && (
+                    <h1>New attendant</h1>
+                )}
+                {this.props.action === 'edit' && (
+                    <h1>Edit attendant</h1>
+                )}
                 <form action="" onSubmit={this.props.onSubmit}>
                     <label htmlFor="fname">First name <span className="required_input">(required)</span></label>
                     <input required onChange={this.props.onChange} type="text" name="fname" id="fname" value={this.props.formValues.fname} />

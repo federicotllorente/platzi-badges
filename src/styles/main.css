@@ -78,6 +78,7 @@ body a.link-unstyled:hover {
 }
 
 .NotFound a:not(:disabled):not(.disabled):hover, .NotFound a:not(:disabled):not(.disabled):active {
+  color: #f4f4f7;
   background-color: #70af40;
   cursor: pointer;
 }
@@ -492,6 +493,7 @@ body a.link-unstyled:hover {
 }
 
 .BadgeForm__button:not(:disabled):not(.disabled):hover, .BadgeForm__button:not(:disabled):not(.disabled):active {
+  color: #f4f4f7;
   background-color: #70af40;
   cursor: pointer;
 }
@@ -532,6 +534,9 @@ body a.link-unstyled:hover {
   display: -ms-flexbox;
   display: flex;
   padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .BadgesList__item__avatar {
@@ -554,6 +559,7 @@ body a.link-unstyled:hover {
       -ms-flex-pack: center;
           justify-content: center;
   overflow-wrap: anywhere;
+  width: -webkit-fill-available;
 }
 
 .BadgesList__item__content h1, .BadgesList__item__content h2, .BadgesList__item__content h3, .BadgesList__item__content h4, .BadgesList__item__content h5 {
@@ -577,10 +583,88 @@ body a.link-unstyled:hover {
   height: auto;
 }
 
+.BadgesList__item__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.BadgesList__item__buttons a {
+  padding: 1rem 1.5rem;
+  color: #f4f4f7;
+  background-color: #7DCD40;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 0.3rem;
+  border: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #1b1b25;
+  background-color: #dbdbdb;
+}
+
+.BadgesList__item__buttons a:not(:disabled):not(.disabled):hover, .BadgesList__item__buttons a:not(:disabled):not(.disabled):active {
+  color: #f4f4f7;
+  background-color: #70af40;
+  cursor: pointer;
+}
+
+.BadgesList__item__buttons a:not(:disabled):not(.disabled):focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+}
+
+.BadgesList__item__buttons a:first-child {
+  margin-bottom: 0.5rem;
+}
+
+.BadgesList__item__buttons a:last-child:hover {
+  background-color: #CD4040 !important;
+}
+
 @media (max-width: 767px) {
+  .BadgesList__item {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
   .BadgesList__item__avatar {
     width: 50px;
     height: 50px;
+  }
+  .BadgesList__item__content {
+    width: 70%;
+  }
+  .BadgesList__item__buttons {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .BadgesList__item__buttons a {
+    width: inherit;
+    padding: 0.5rem 0.75rem;
+    margin: 1rem 0.25rem 0;
+    text-align: center;
+  }
+  .BadgesList__item__buttons a:first-child {
+    margin-bottom: inherit;
   }
 }
 
@@ -648,6 +732,7 @@ body a.link-unstyled:hover {
 }
 
 .Homepage__content a:not(:disabled):not(.disabled):hover, .Homepage__content a:not(:disabled):not(.disabled):active {
+  color: #f4f4f7;
   background-color: #70af40;
   cursor: pointer;
 }
@@ -786,6 +871,7 @@ body a.link-unstyled:hover {
 }
 
 .Badges__buttons a:not(:disabled):not(.disabled):hover, .Badges__buttons a:not(:disabled):not(.disabled):active {
+  color: #f4f4f7;
   background-color: #70af40;
   cursor: pointer;
 }
