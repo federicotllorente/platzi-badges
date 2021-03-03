@@ -31,8 +31,8 @@ class Badges extends Component {
                 <div className="NotFound">
                     <img src={mainLogo} alt="Platzi Badges Logo" />
                     <h1>Oops!</h1>
-                    <p style={{ textAlign: 'center' }}>
-                        There's an error...<br />Please, try again later 😊
+                    <p>
+                        {this.state.error.message} Please, try again later 😊
                     </p>
                     <Link to="/">Return to the Homepage</Link>
                 </div>

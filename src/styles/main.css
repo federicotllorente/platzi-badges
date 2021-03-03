@@ -35,6 +35,11 @@ body a.link-unstyled:hover {
   text-decoration: none;
 }
 
+.AnchorWithoutStyles {
+  color: initial;
+  text-decoration: none;
+}
+
 .NotFound {
   width: 100%;
   min-height: 100vh;
@@ -86,6 +91,11 @@ body a.link-unstyled:hover {
 .NotFound a:not(:disabled):not(.disabled):focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+}
+
+.NotFound p {
+  padding: 0 1rem;
+  text-align: center;
 }
 
 .loader {
@@ -583,7 +593,7 @@ body a.link-unstyled:hover {
   height: auto;
 }
 
-.BadgesList__item__buttons {
+.BadgesList__item__buttons, .BadgeDetails__container__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -596,7 +606,7 @@ body a.link-unstyled:hover {
           align-items: flex-end;
 }
 
-.BadgesList__item__buttons a {
+.BadgesList__item__buttons a, .BadgeDetails__container__buttons a {
   padding: 1rem 1.5rem;
   color: #f4f4f7;
   background-color: #7DCD40;
@@ -616,22 +626,22 @@ body a.link-unstyled:hover {
   background-color: #dbdbdb;
 }
 
-.BadgesList__item__buttons a:not(:disabled):not(.disabled):hover, .BadgesList__item__buttons a:not(:disabled):not(.disabled):active {
+.BadgesList__item__buttons a:not(:disabled):not(.disabled):hover, .BadgeDetails__container__buttons a:not(:disabled):not(.disabled):hover, .BadgesList__item__buttons a:not(:disabled):not(.disabled):active, .BadgeDetails__container__buttons a:not(:disabled):not(.disabled):active {
   color: #f4f4f7;
   background-color: #70af40;
   cursor: pointer;
 }
 
-.BadgesList__item__buttons a:not(:disabled):not(.disabled):focus {
+.BadgesList__item__buttons a:not(:disabled):not(.disabled):focus, .BadgeDetails__container__buttons a:not(:disabled):not(.disabled):focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
 }
 
-.BadgesList__item__buttons a:first-child {
+.BadgesList__item__buttons a:first-child, .BadgeDetails__container__buttons a:first-child {
   margin-bottom: 0.5rem;
 }
 
-.BadgesList__item__buttons a:last-child:hover {
+.BadgesList__item__buttons a:last-child:hover, .BadgeDetails__container__buttons a:last-child:hover {
   background-color: #CD4040 !important;
 }
 
@@ -647,7 +657,7 @@ body a.link-unstyled:hover {
   .BadgesList__item__content {
     width: 70%;
   }
-  .BadgesList__item__buttons {
+  .BadgesList__item__buttons, .BadgeDetails__container__buttons {
     width: 100%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -657,13 +667,13 @@ body a.link-unstyled:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  .BadgesList__item__buttons a {
+  .BadgesList__item__buttons a, .BadgeDetails__container__buttons a {
     width: inherit;
     padding: 0.5rem 0.75rem;
     margin: 1rem 0.25rem 0;
     text-align: center;
   }
-  .BadgesList__item__buttons a:first-child {
+  .BadgesList__item__buttons a:first-child, .BadgeDetails__container__buttons a:first-child {
     margin-bottom: inherit;
   }
 }
@@ -764,7 +774,7 @@ body a.link-unstyled:hover {
   }
 }
 
-.BadgeNew__hero {
+.BadgeNew__hero, .BadgeDetails__hero {
   width: 100%;
   padding: 2rem 0;
   background: url("../img/stars.svg"), #1b1b25;
@@ -773,7 +783,7 @@ body a.link-unstyled:hover {
   color: #f4f4f7;
 }
 
-.BadgeNew__hero img {
+.BadgeNew__hero img, .BadgeDetails__hero img {
   width: 300px;
   padding-left: 5vw;
 }
@@ -792,10 +802,10 @@ body a.link-unstyled:hover {
   .BadgeNew {
     text-align: center;
   }
-  .BadgeNew__hero {
+  .BadgeNew__hero, .BadgeDetails__hero {
     padding: 2rem 0 9rem;
   }
-  .BadgeNew__hero img {
+  .BadgeNew__hero img, .BadgeDetails__hero img {
     width: 250px;
     padding-left: 0;
   }
@@ -810,6 +820,83 @@ body a.link-unstyled:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+.BadgeDetails__hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.BadgeDetails__hero h1 {
+  padding-left: 5rem;
+  font-size: 2.5rem;
+}
+
+.BadgeDetails__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 50px;
+}
+
+.BadgeDetails__container__buttons {
+  margin-left: 50px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.BadgeDetails__container__buttons h2 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.BadgeDetails__container__buttons a:first-of-type {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+  .BadgeDetails__hero {
+    padding: 2.5rem 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .BadgeDetails__hero h1 {
+    padding-left: initial;
+    padding-top: 2rem;
+  }
+  .BadgeDetails__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .BadgeDetails__container .Badge {
+    margin-top: initial;
+  }
+  .BadgeDetails__container__buttons {
+    width: 90vw;
+    max-width: 450px;
+    margin-left: initial;
+  }
+  .BadgeDetails__container__buttons h2 {
+    display: none;
   }
 }
 

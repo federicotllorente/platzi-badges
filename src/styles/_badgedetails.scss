@@ -1,0 +1,57 @@
+.BadgeDetails {
+    &__hero {
+        @extend .BadgeNew__hero;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            padding-left: 5rem;
+            font-size: 2.5rem;
+        }
+    }
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+        &__buttons {
+            @extend .BadgesList__item__buttons;
+            margin-left: 50px;
+            align-items: flex-start;
+            h2 {
+                font-size: 2rem;
+                padding-bottom: 1rem;
+            }
+            a:first-of-type {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpointTablet) {
+    .BadgeDetails {
+        &__hero {
+            padding: 2.5rem 0;
+            flex-direction: column;
+            h1 {
+                padding-left: initial;
+                padding-top: 2rem;
+            }
+        }
+        &__container {
+            flex-direction: column-reverse;
+            .Badge {
+                margin-top: initial;
+            }
+            &__buttons {
+                width: 90vw;
+                max-width: 450px;
+                margin-left: initial;
+                h2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}

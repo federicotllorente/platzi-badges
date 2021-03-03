@@ -31,7 +31,7 @@ class BadgesList extends Component {
                             <li className="BadgesList__item" key={el.id}>
                                 <Gravatar className="BadgesList__item__avatar" email={el.email} alt={`${el.fname} ${el.lname}`} />
                                 <div className="BadgesList__item__content">
-                                    <h2>{el.fname} {el.lname}</h2>
+                                    <h2><Link className="AnchorWithoutStyles" to={`badges/${el.id}`}>{el.fname} {el.lname}</Link></h2>
                                     {el.twitter && (
                                         <p>
                                             <img src={twitterLogo} alt="Twitter Logo" />

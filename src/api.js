@@ -35,6 +35,7 @@ const api = {
             });
         },
         read(badgeId) {
+            // throw new Error("Error: Not Found");
             return callApi(`/badges/${badgeId}`);
         },
         update(badgeId, updates) {
