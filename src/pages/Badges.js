@@ -47,7 +47,8 @@ class Badges extends Component {
                 </div>
                 <div className="Badges__container">
                     <div className="Badges__buttons">
-                        <Link to="/badges/new">Add</Link>
+                        <h1>Badges</h1>
+                        <Link to="/badges/new">Create a New Badge</Link>
                     </div>
                     <BadgesList listData={this.state.data} isLoading={this.state.loading} />
                 </div>

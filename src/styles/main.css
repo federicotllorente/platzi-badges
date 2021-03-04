@@ -865,8 +865,40 @@ body a.link-unstyled:hover {
   padding-bottom: 1rem;
 }
 
-.BadgeDetails__container__buttons a:first-of-type {
+.BadgeDetails__container__buttons a {
   margin-bottom: 1rem;
+}
+
+.BadgeDetails__container__buttons button {
+  padding: 1rem 1.5rem;
+  color: #f4f4f7;
+  background-color: #7DCD40;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 0.3rem;
+  border: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+  color: #1b1b25;
+  background-color: #dbdbdb;
+}
+
+.BadgeDetails__container__buttons button:not(:disabled):not(.disabled):hover, .BadgeDetails__container__buttons button:not(:disabled):not(.disabled):active {
+  color: #f4f4f7;
+  background-color: #70af40;
+  cursor: pointer;
+}
+
+.BadgeDetails__container__buttons button:not(:disabled):not(.disabled):focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+}
+
+.BadgeDetails__container__buttons button:hover {
+  background-color: #CD4040 !important;
 }
 
 @media (max-width: 767px) {
@@ -936,10 +968,17 @@ body a.link-unstyled:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 1rem;
+}
+
+.Badges__buttons h1 {
+  font-size: 2.5rem;
 }
 
 .Badges__buttons a {
@@ -971,6 +1010,153 @@ body a.link-unstyled:hover {
 @media (max-width: 767px) {
   .Badges_conf-logo {
     width: 250px;
+  }
+  .Badges__buttons h1 {
+    font-size: 2rem;
+  }
+}
+
+.Modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Modal__container {
+  width: 400px;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: 10rem;
+  background-color: #f4f4f7;
+  border-radius: 0.3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.Modal__container p {
+  padding: 1rem 0;
+}
+
+.Modal__close-button {
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: #dbdbdb;
+  font-weight: 700;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.Modal__close-button:hover {
+  color: #f4f4f7;
+  background-color: #1b1b25;
+  cursor: pointer;
+}
+
+.Modal__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.Modal__confirm-button {
+  padding: 1rem 1.5rem;
+  color: #f4f4f7;
+  background-color: #7DCD40;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 0.3rem;
+  border: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 1rem;
+  background-color: #CD4040 !important;
+}
+
+.Modal__confirm-button:not(:disabled):not(.disabled):hover, .Modal__confirm-button:not(:disabled):not(.disabled):active {
+  color: #f4f4f7;
+  background-color: #70af40;
+  cursor: pointer;
+}
+
+.Modal__confirm-button:not(:disabled):not(.disabled):focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+}
+
+.Modal__confirm-button:hover {
+  background-color: #9e3737 !important;
+}
+
+.Modal__cancel-button {
+  padding: 1rem 1.5rem;
+  color: #f4f4f7;
+  background-color: #7DCD40;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 0.3rem;
+  border: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.Modal__cancel-button:not(:disabled):not(.disabled):hover, .Modal__cancel-button:not(:disabled):not(.disabled):active {
+  color: #f4f4f7;
+  background-color: #70af40;
+  cursor: pointer;
+}
+
+.Modal__cancel-button:not(:disabled):not(.disabled):focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+}
+
+@media (max-width: 767px) {
+  .Modal__container {
+    width: 250px;
+    padding: 4rem 2rem 2rem;
   }
 }
 

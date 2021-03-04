@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 
 import confLogo from '../img/badge-header.svg';
 import Badge from '../components/Badge';
+import BadgeDeleteModal from '../components/BadgeDeleteModal';
 import api from '../api';
 
 class BadgeDetails extends Component {
     state = {
         loading: true,
         error: null,
-        data: undefined
+        data: undefined,
+        isOpen: false
     }
     componentDidMount() {
         this.fetchData();
@@ -19,6 +21,22 @@ class BadgeDetails extends Component {
         try {
             const data = await api.badges.read(this.props.match.params.badgeId);
             this.setState({ loading: false, data: data });
+        } catch (error) {
+            this.setState({ loading: false, error: error });
+        }
+    };
+    handleCloseModal = e => {
+        this.setState({ isOpen: false });
+    };
+    handleOpenModal = e => {
+        this.setState({ isOpen: true });
+    };
+    deleteBadge = async () => {
+        this.setState({ loading: true, error: null });
+        try {
+            this.setState({ loading: false });
+            await api.badges.remove(this.props.match.params.badgeId);
+            this.props.history.push('/badges');
         } catch (error) {
             this.setState({ loading: false, error: error });
         }
@@ -46,7 +64,7 @@ class BadgeDetails extends Component {
                     <div className="BadgeDetails__container__buttons">
                         <h2>Actions</h2>
                         <Link to={`${this.props.match.params.badgeId}/edit`}>Edit</Link>
-                        <Link to={`${this.props.match.params.badgeId}/delete`}>Delete</Link>
+                        <button onClick={this.handleOpenModal}>Delete</button>
                     </div>
                 </div>
                 {this.state.error && (
@@ -56,6 +74,12 @@ class BadgeDetails extends Component {
                         <p>Please try again in a moment 😊</p>
                     </div>
                 )}
+                <BadgeDeleteModal
+                    isOpen={this.state.isOpen}
+                    onCloseModal={this.handleCloseModal}
+                    badge={this.state.data}
+                    deleteBadge={this.deleteBadge}
+                />
             </div>
         );
     }

@@ -6,6 +6,7 @@ $primaryColor: #7DCD40;
 $primaryColorWOpacity: rgba(125, 205, 64, 0.5);
 $altPrimaryColor: #70af40;
 $secondaryColor: #CD4040;
+$altSecondaryColor: #9e3737;
 $secondaryColorWOpacity: rgba(255, 64, 64, 0.5);
 $linksColor: #228BCC;
 $linksColorWOpacity: #228bcc23;
@@ -119,6 +120,7 @@ body {
 @import '_badgenew.scss';
 @import '_badgedetails.scss';
 @import '_badges.scss';
+@import '_modal.scss';
 
 // Responsive design (media queries)
 @media (max-width: $breakpointTablet) {
