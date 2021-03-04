@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Platzi Badges – By Federico Tejedor Llorente
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+This project is mainly made with [React.js](https://reactjs.org/) and [Sass](https://sass-lang.com/), and it was initialized with [Create React App](https://github.com/facebook/create-react-app). It is an App to register the attendants for a conference, and it's my project for the [React.js course](https://platzi.com/cursos/react/) from [Platzi](https://platzi.com/). I invite you to clone this repository so you can update it or make it better!
 
-In the project directory, you can run:
+## Starting with this project
 
-### `npm start`
+Once cloned, all you need to do is start the App with `npm start` while you're in the project folder. A new browser tab/window will be opened in the *localhost* with the port 3000. If not, just open in your browser [http://localhost:3000](http://localhost:3000).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I hope you enjoy this project. See you coding!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Introducción (ESP)
 
-### `npm test`
+Este proyecto está hecho principalmente con [React.js](https://reactjs.org/) y [Sass](https://sass-lang.com/), y fue inicializado con [Create React App](https://github.com/facebook/create-react-app). Es una aplicación web para registrar a los asistentes de una conferencia, y a la vez es mi proyecto para el [curso de React.js](https://platzi.com/cursos/react/) de [Platzi](https://platzi.com/). ¡Te invito a clonar este repositorio para que puedas actualizarlo o mejorarlo!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Comenzando con este proyecto
 
-### `npm run build`
+Una vez clonado, todo lo que tienes que hacer es iniciar la App con `npm start` mientras estás posicionad@ en la carpeta del proyecto. Una nueva pestaña o ventana del navegador se abrirá en el *localhost* con el puerto 3000. Si no, simplemente abre en tu navegador [http://localhost:3000](http://localhost:3000).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Espero que te guste este proyecto. ¡Nos vemos programando!
