@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import confLogo from '../img/badge-header.svg';
 import mainLogo from '../img/mainLogo.svg';
-import BadgesList from '../components/BadgesList';
-
+import BadgesViews from '../views/BadgesViews';
 import api from '../api';
 
 class Badges extends Component {
@@ -39,20 +37,10 @@ class Badges extends Component {
             );
         }
         return (
-            <div className="Badges">
-                <div className="Badges__hero">
-                    <div className="Badges__container">
-                        <img className="Badges_conf-logo" src={confLogo} alt="Logo PlatziConf" />
-                    </div>
-                </div>
-                <div className="Badges__container">
-                    <div className="Badges__buttons">
-                        <h1>Badges</h1>
-                        <Link to="/badges/new">Create a New Badge</Link>
-                    </div>
-                    <BadgesList listData={this.state.data} isLoading={this.state.loading} />
-                </div>
-            </div>
+            <BadgesViews
+                loading={this.state.loading}
+                data={this.state.data}
+            />
         );
     }
 }

@@ -1,22 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import twitterLogo from '../img/twitter.svg';
 import BadgesListSkeleton from './BadgesListSkeleton';
-import Gravatar from './Gravatar';
+import BadgesListItem from './BadgesListItem';
 import FilterBadges from './FilterBadges';
-
-function useFilterBadges(listData) {
-    const [query, setQuery] = useState('');
-    const [filteredBadges, setFilteredBadges] = useState(listData);
-    useMemo(() => {
-        const result = listData && listData.filter(el => {
-            return `${el.fname} ${el.lname}`.toLowerCase().includes(query.toLowerCase());
-        })
-        setFilteredBadges(result);
-    }, [listData, query]);
-    return { query, setQuery, filteredBadges };
-}
+import useFilterBadges from '../hooks/useFilteredBadges';
 
 function BadgesList(props) {
     const { query, setQuery, filteredBadges } = useFilterBadges(props.listData);
@@ -45,23 +33,7 @@ function BadgesList(props) {
             <ul>
                 {reverseListData && reverseListData.map(el => {
                     return (
-                        <li className="BadgesList__item" key={el.id}>
-                            <Gravatar className="BadgesList__item__avatar" email={el.email} alt={`${el.fname} ${el.lname}`} />
-                            <div className="BadgesList__item__content">
-                                <h2><Link className="AnchorWithoutStyles" to={`badges/${el.id}`}>{el.fname} {el.lname}</Link></h2>
-                                {el.twitter && (
-                                    <p>
-                                        <img src={twitterLogo} alt="Twitter Logo" />
-                                        <a href={`https://www.twitter.com/${el.twitter}/`}>@{el.twitter}</a>
-                                    </p>
-                                )}
-                                <h3>{el.jtitle}</h3>
-                            </div>
-                            <div className="BadgesList__item__buttons">
-                                <Link to={`badges/${el.id}/edit`}>Edit</Link>
-                                <Link to={`badges/${el.id}/delete`}>Delete</Link>
-                            </div>
-                        </li>
+                        <BadgesListItem data={el} key={el.id} />
                     );
                 })}
             </ul>

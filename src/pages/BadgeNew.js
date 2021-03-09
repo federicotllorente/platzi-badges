@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import confLogo from '../img/badge-header.svg';
-import Badge from '../components/Badge';
-import BadgeForm from '../components/BadgeForm';
+import BadgeNewViews from '../views/BadgeNewViews';
 import api from '../api';
 
 class BadgeNew extends Component {
@@ -43,28 +41,12 @@ class BadgeNew extends Component {
             );
         }
         return (
-            <div className="BadgeNew">
-                <div className="BadgeNew__hero">
-                    <img src={confLogo} alt="Logo Platzi Conf" />
-                </div>
-                <div className="BadgeNew__container">
-                    <Badge
-                        fname={this.state.form.fname}
-                        lname={this.state.form.lname}
-                        email={this.state.form.email}
-                        jtitle={this.state.form.jtitle}
-                        twitter={this.state.form.twitter}
-                    />
-                    <BadgeForm onSubmit={this.handleSubmit} onChange={this.handleChange} formValues={this.state.form} action="create" />
-                </div>
-                {this.state.error && (
-                    <div className="error_modal">
-                        <h2>{this.state.error.message}</h2>
-                        <p>Sorry, but there was an error.</p>
-                        <p>Please try again in a moment 😊</p>
-                    </div>
-                )}
-            </div>
+            <BadgeNewViews
+                error={this.state.error}
+                form={this.state.form}
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+            />
         );
     }
 }

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-import confLogo from '../img/badge-header.svg';
-import Badge from '../components/Badge';
-import BadgeDeleteModal from '../components/BadgeDeleteModal';
+import BadgesDetailsViews from '../views/BadgesDetailsViews';
 import api from '../api';
 
 class BadgeDetails extends Component {
@@ -48,39 +45,15 @@ class BadgeDetails extends Component {
             );
         }
         return (
-            <div className="BadgeDetails">
-                <div className="BadgeDetails__hero">
-                    <img src={confLogo} alt="Logo Platzi Conf" />
-                    <h1>{this.state.data.fname} {this.state.data.lname}</h1>
-                </div>
-                <div className="BadgeDetails__container">
-                    <Badge
-                        fname={this.state.data.fname}
-                        lname={this.state.data.lname}
-                        email={this.state.data.email}
-                        jtitle={this.state.data.jtitle}
-                        twitter={this.state.data.twitter}
-                    />
-                    <div className="BadgeDetails__container__buttons">
-                        <h2>Actions</h2>
-                        <Link to={`${this.props.match.params.badgeId}/edit`}>Edit</Link>
-                        <button onClick={this.handleOpenModal}>Delete</button>
-                    </div>
-                </div>
-                {this.state.error && (
-                    <div className="error_modal">
-                        <h2>{this.state.error.message}</h2>
-                        <p>Sorry, but there was an error.</p>
-                        <p>Please try again in a moment 😊</p>
-                    </div>
-                )}
-                <BadgeDeleteModal
-                    isOpen={this.state.isOpen}
-                    onCloseModal={this.handleCloseModal}
-                    badge={this.state.data}
-                    deleteBadge={this.deleteBadge}
-                />
-            </div>
+            <BadgesDetailsViews
+                error={this.state.error}
+                data={this.state.data}
+                isOpen={this.state.isOpen}
+                badgeId={this.props.match.params.badgeId}
+                handleOpenModal={this.handleOpenModal}
+                handleCloseModal={this.handleCloseModal}
+                deleteBadge={this.deleteBadge}
+            />
         );
     }
 }
