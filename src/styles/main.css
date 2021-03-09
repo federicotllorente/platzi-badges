@@ -535,6 +535,19 @@ body a.link-unstyled:hover {
   margin-bottom: 1rem;
 }
 
+.BadgesList__search {
+  padding: 0.5rem;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  background-color: #f4f4f7;
+  border-radius: 0.3rem;
+  border: 1px solid #dbdbdb;
+  width: -webkit-fill-available;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
 .BadgesList__item {
   background: #fff;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);

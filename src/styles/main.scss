@@ -41,6 +41,14 @@ $altFontFamily: 'Bebas Neue', sans-serif;
     }
 }
 
+@mixin form-input {
+    padding: 0.5rem;
+    font-family: $mainFontFamily;
+    background-color: $lightColor;
+    border-radius: 0.3rem;
+    border: 1px solid $altLightColor;
+}
+
 // Breakpoints
 $breakpointTablet: 767px;
 

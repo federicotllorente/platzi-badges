@@ -3,6 +3,14 @@
     ul > li {
         margin-bottom: 1rem;
     }
+    &__search {
+        @include form-input;
+        width: -webkit-fill-available;
+        margin-bottom: 1rem;
+        background-color: #fff;
+        font-size: $mainFontSize;
+        font-weight: 500;
+    }
     &__item {
         background: #fff;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
