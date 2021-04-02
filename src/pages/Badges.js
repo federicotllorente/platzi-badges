@@ -1,48 +1,48 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import { fetchData } from '../actions';
 import mainLogo from '../img/mainLogo.svg';
 import BadgesViews from '../views/BadgesViews';
-import api from '../api';
 
-class Badges extends Component {
-    state = {
-        loading: true,
-        data: undefined,
-        error: null
-    }
-    componentDidMount() {
-        this.fetchData();
-    }
-    fetchData = async () => {
-        this.setState({ loading: true, error: null });
-        try {
-            const data = await api.badges.list();
-            this.setState({ loading: false, data: data });
-        } catch (error) {
-            this.setState({ loading: false, error: error });
-        }
-    }
-    render() {
-        if (this.state.error) {
-            return (
-                <div className="NotFound">
-                    <img src={mainLogo} alt="Platzi Badges Logo" />
-                    <h1>Oops!</h1>
-                    <p>
-                        {this.state.error.message} Please, try again later 😊
-                    </p>
-                    <Link to="/">Return to the Homepage</Link>
-                </div>
-            );
-        }
+const Badges = ({ loading, data, error, fetchData }) => {
+    useEffect(() => {
+        fetchData();
+        // eslint-disable-next-line
+    }, []);
+    if (error) {
         return (
-            <BadgesViews
-                loading={this.state.loading}
-                data={this.state.data}
-            />
+            <div className="NotFound">
+                <img src={mainLogo} alt="Platzi Badges Logo" />
+                <h1>Oops!</h1>
+                <p>
+                    {error.message} Please, try again later 😊
+                </p>
+                <Link to="/">Return to the Homepage</Link>
+            </div>
         );
     }
+    return (
+        <BadgesViews
+            loading={loading}
+            data={data}
+        />
+    );
 }
 
-export default Badges;
+const mapStateToProps = state => {
+    return {
+        loading: state.loading,
+        data: state.data,
+        error: state.error
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchData: () => dispatch(fetchData())
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Badges);
