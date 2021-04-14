@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const multer = require('multer');
 const router = express.Router();
+const pool = require('./db');
 
 const response = {
     success: (req, res, data, status) => {
