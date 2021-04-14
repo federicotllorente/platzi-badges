@@ -78,5 +78,14 @@
     .Badge {
         width: 90vw;
         margin-top: 1.5rem;
+        &__section-name {
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+        &__avatar {
+            width: 80px;
+            height: 80px;
+        }
     }
 }
