@@ -7,7 +7,7 @@ function Gravatar(props) {
         <img
             className={props.className}
             src={`http://www.gravatar.com/avatar/${hash}?d=identicon`}
-            alt={`${props.fname} ${props.lname}`}
+            alt={props.alt}
         />
     );
 }

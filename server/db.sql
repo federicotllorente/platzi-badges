@@ -9,7 +9,7 @@ CREATE TABLE badges(
     email VARCHAR(100) NOT NULL,
     jtitle VARCHAR(50) NOT NULL,
     twitter VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id);
+    PRIMARY KEY (id)
 );
 
 DESCRIBE badges;
