@@ -2,20 +2,20 @@ import api from '../api';
 
 export const fetchDataLoading = () => {
     return {
-        type: 'fetchDataLoading'
+        type: 'FETCH_DATA_LOADING'
     };
 };
 
 export const fetchDataSuccess = data => {
     return {
-        type: 'fetchDataSuccess',
+        type: 'FETCH_DATA_SUCCESS',
         payload: data
     };
 };
 
 export const fetchDataFailure = error => {
     return {
-        type: 'fetchDataFailure',
+        type: 'FETCH_DATA_FAILURE',
         payload: error
     };
 };

@@ -1,17 +1,17 @@
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'fetchDataLoading':
+        case 'FETCH_DATA_LOADING':
             return {
                 ...state,
                 loading: true
             };
-        case 'fetchDataSuccess':
+        case 'FETCH_DATA_SUCCESS':
             return {
                 loading: false,
                 data: action.payload,
                 error: null
             };
-        case 'fetchDataFailure':
+        case 'FETCH_DATA_FAILURE':
             return {
                 loading: false,
                 data: undefined,

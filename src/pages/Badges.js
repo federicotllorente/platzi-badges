@@ -17,7 +17,7 @@ const Badges = ({ loading, data, error, fetchData }) => {
                 <img src={mainLogo} alt="Platzi Badges Logo" />
                 <h1>Oops!</h1>
                 <p>
-                    {error.message} Please, try again later 😊
+                    {error.message}. Please, try again later 😊
                 </p>
                 <Link to="/">Return to the Homepage</Link>
             </div>

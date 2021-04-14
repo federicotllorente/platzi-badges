@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This project is mainly made with [React.js](https://reactjs.org/) and [Sass](https://sass-lang.com/), and it was initialized with [Create React App](https://github.com/facebook/create-react-app). It is an App to register the attendants for a conference, and it was started as my project for the [React.js course](https://platzi.com/cursos/react/) from [Platzi](https://platzi.com/). Then, I incorporated Redux when I started the [React Router and Redux course](https://platzi.com/clases/react-router-redux/) in order to improve the App. I invite you to clone this repository so you can update it or make it better!
+This project is mainly made with [React.js](https://reactjs.org/) and [Sass](https://sass-lang.com/), and it was initialized with [Create React App](https://github.com/facebook/create-react-app). It is an App to register the attendants for a conference, and it was started as my project for the [React.js course](https://platzi.com/cursos/react/) from [Platzi](https://platzi.com/).
+
+Then, I begin adding Redux when I started the [React Router and Redux course](https://platzi.com/clases/react-router-redux/) in order to improve the App. I invite you to clone this repository so you can update it or make it better!
 
 ## Starting with this project
 
@@ -12,7 +14,9 @@ I hope you enjoy this project. See you coding!
 
 ## Introducción (ESP)
 
-Este proyecto está hecho principalmente con [React.js](https://reactjs.org/) y [Sass](https://sass-lang.com/), y fue inicializado con [Create React App](https://github.com/facebook/create-react-app). Es una aplicación web para registrar a los asistentes de una conferencia, y a la vez comenzó como mi proyecto para el [curso de React.js](https://platzi.com/cursos/react/) de [Platzi](https://platzi.com/). Más tarde, le incorporé Redux cuando comencé el [curso de React Router y Redux](https://platzi.com/clases/react-router-redux/) para poder mejorar la App. ¡Te invito a clonar este repositorio para que puedas actualizarlo o mejorarlo!
+Este proyecto está hecho principalmente con [React.js](https://reactjs.org/) y [Sass](https://sass-lang.com/), y fue inicializado con [Create React App](https://github.com/facebook/create-react-app). Es una aplicación web para registrar a los asistentes de una conferencia, y a la vez comenzó como mi proyecto para el [curso de React.js](https://platzi.com/cursos/react/) de [Platzi](https://platzi.com/).
+
+Más tarde, le comencé a incorporar Redux cuando inicié el [curso de React Router y Redux](https://platzi.com/clases/react-router-redux/) para poder mejorar la App. ¡Te invito a clonar este repositorio para que puedas actualizarlo o mejorarlo!
 
 ## Comenzando con este proyecto
 
