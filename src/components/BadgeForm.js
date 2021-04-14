@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import inputFile from '../img/input_file.svg';
-
 class BadgeForm extends Component {
     render() {
         return (
@@ -25,10 +23,6 @@ class BadgeForm extends Component {
                     <input required onChange={this.props.onChange} type="text" name="jtitle" id="jtitle" value={this.props.formValues.jtitle} />
                     <label htmlFor="twitter">Twitter</label>
                     <input onChange={this.props.onChange} type="text" name="twitter" id="twitter" value={this.props.formValues.twitter} />
-                    <label htmlFor="ppicture" className="BadgeForm__file">
-                        <img src={inputFile} alt="Upload file icon" />
-                        <p>Upload profile picture</p>
-                    </label>
                     <input type="file" name="ppicture" id="ppicture" />
                     <div className="BadgeForm__checkbox">
                         <input required type="checkbox" name="terms" id="terms" />

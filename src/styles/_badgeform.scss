@@ -58,7 +58,7 @@
         }
     }
     &__checkbox {
-        margin: 0 0 1.5rem;
+        margin: 1.5rem 0 1.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -83,8 +83,5 @@
     .BadgeForm {
         width: 90vw;
         margin-top: -8rem;
-        h1 {
-            // color: initial;
-        }
     }
 }
