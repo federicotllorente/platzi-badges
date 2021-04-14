@@ -14,7 +14,7 @@ function BadgesList(props) {
             <BadgesListSkeleton quantity="3" />
         );
     }
-    if (filteredBadges && filteredBadges.length === 0) {
+    if (filteredBadges?.length === 0) {
         return (
             <div className="BadgesList">
                 <FilterBadges value={query} onChange={setQuery} />
@@ -26,12 +26,12 @@ function BadgesList(props) {
             </div>
         );
     }
-    const reverseListData = filteredBadges && filteredBadges.reverse();
+    const reverseListData = filteredBadges?.reverse();
     return (
         <div className="BadgesList">
             <FilterBadges value={query} onChange={setQuery} />
             <ul>
-                {reverseListData && reverseListData.map(el => {
+                {reverseListData?.map(el => {
                     return (
                         <BadgesListItem data={el} key={el.id} />
                     );

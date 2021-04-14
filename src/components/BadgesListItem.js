@@ -21,7 +21,7 @@ function BadgesListItem(props) {
             </div>
             <div className="BadgesList__item__buttons">
                 <Link to={`badges/${id}/edit`}>Edit</Link>
-                <Link to={`badges/${id}/delete`}>Delete</Link>
+                <Link to={`badges/${id}`}>Preview</Link>
             </div>
         </li>
     );

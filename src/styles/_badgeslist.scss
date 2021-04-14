@@ -58,11 +58,6 @@
                 &:first-child {
                     margin-bottom: 0.5rem;
                 }
-                &:last-child {
-                    &:hover {
-                        background-color: $secondaryColor !important;
-                    }
-                }
             }
         }
     }
