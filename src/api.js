@@ -1,4 +1,4 @@
-const BASE_URL = process.env.HOST;
+const BASE_URL = process.env.HOST || window.location.origin;
 
 async function callApi(endpoint, options = {}) {
     options.headers = {
