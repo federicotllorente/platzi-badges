@@ -1,6 +1,6 @@
-CREATE DATABASE platzi_badges;
+-- CREATE DATABASE platzi_badges;
 
-USE platzi_badges;
+-- USE platzi_badges;
 
 CREATE TABLE badges(
     id INT NOT NULL AUTO_INCREMENT,

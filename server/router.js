@@ -4,10 +4,10 @@ const router = express.Router();
 const pool = require('./db');
 
 router.get('/badges', async (req, res) => {
-    const badges = await pool.query('SELECT * FROM badges')
+    await pool.query('SELECT * FROM badges')
         .then(data => {
             console.log(data);
-            return res.status(200).send(badges);
+            return res.status(200).send(data);
         })
         .catch(err => {
             console.error(err);
@@ -16,10 +16,10 @@ router.get('/badges', async (req, res) => {
 });
 
 router.get('/badges/:badgeId', async (req, res) => {
-    const requestedBadge = await pool.query('SELECT * FROM badges WHERE id = ?', [req.params.badgeId])
+    await pool.query('SELECT * FROM badges WHERE id = ?', [req.params.badgeId])
         .then(data => {
             console.log(data);
-            return res.status(200).send(requestedBadge[0]);
+            return res.status(200).send(data[0]);
         })
         .catch(err => {
             console.error(err);
@@ -34,7 +34,7 @@ router.post('/badges', async (req, res) => {
         .then(data => {
             console.log('Badge succesfully created!');
             console.log(data);
-            return res.status(201).send(newBadge);
+            return res.status(201).send(data);
         })
         .catch(err => {
             console.error(err);
@@ -58,11 +58,11 @@ router.put('/badges/:badgeId', async (req, res) => {
 });
 
 router.delete('/badges/:badgeId', async (req, res) => {
-    const badgeToDelete = await pool.query('DELETE FROM badges WHERE id = ?', [req.params.badgeId])
+    await pool.query('DELETE FROM badges WHERE id = ?', [req.params.badgeId])
         .then(data => {
             console.log('Badge succesfully deleted');
             console.log(data);
-            return res.status(200).send(badgeToDelete);
+            return res.status(200).send(data);
         })
         .catch(err => {
             console.error(err);
